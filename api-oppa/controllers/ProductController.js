@@ -54,7 +54,7 @@ export default {
                 return;
             }
 
-            data.slug = data.title.toLowerCase().replace(/ /g,'-').replace(/[*\w-]+/g,'');
+            data.slug = data.title.toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,'');
             if (req.files && req.files.imagen) {
                 var img_path = req.files.imagen.path;
                 var name = img_path.split('/');
